@@ -39,7 +39,7 @@
 			<div class="col-6">
 				<select name="developer[]" multiple="multiple">
 					@foreach($developers as $developer)
-						<option>{{ $developer->title }}</option>
+						<option value="{{ $developer->id }}">{{ $developer->title }}</option>
 					@endforeach
 				</select>
 			</div>
@@ -67,7 +67,7 @@
 			<div class="col-6">
 				<ul>
 					@foreach($genres as $genre)
-						<li><input type="checkbox" name="genre[]" value="{{ $genre->title }}"> {{ $genre->title }}</li>
+						<li value="{{ $genre->id }}"><input type="checkbox" name="genre[]" value="{{ $genre->id }}"> {{ $genre->title }}</li>
 					@endforeach
 				</ul>
 			</div>

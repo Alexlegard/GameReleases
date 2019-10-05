@@ -18,8 +18,8 @@ class Game extends Model
 		return $this->hasOne(Publisher::class, 'id');
 	}
 	
-	public function genres()
+	public function genre()
 	{
-		return $this->belongsToMany(Genre::class, 'id');
+		return $this->belongsToMany(Genre::class);
 	}
 }

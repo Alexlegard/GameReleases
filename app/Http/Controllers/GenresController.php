@@ -39,6 +39,7 @@ class GenresController extends Controller
      */
     public function store(Request $request)
     {
+		
         request()->validate([
 			'title' => 'required',
 		]);
@@ -47,7 +48,7 @@ class GenresController extends Controller
 		Genre::create($request->all());
 		
 		return redirect("/admin/genres");
-    }
+	}
 
     /**
      * Display the specified resource.

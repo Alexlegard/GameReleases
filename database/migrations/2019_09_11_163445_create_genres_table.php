@@ -20,7 +20,7 @@ class CreateGenresTable extends Migration
     {
         Schema::create('genres', function (Blueprint $table) {
             $table->bigIncrements('id');
-			$table->unsignedBigInteger('title');
+			$table->string('title');
             $table->timestamps();
         });
     }

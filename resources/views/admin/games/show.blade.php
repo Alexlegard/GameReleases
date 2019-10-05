@@ -10,9 +10,22 @@
 			Release date: {{ $game->release_date }}
 		</h4>
 		
+		<h4>
+			Developer:
+			@foreach($game->developer as $d)
+				{{ $d->title }}
+			@endforeach
+		</h4>
+		
 		<h4 id="publisher">
 			Publisher: {{ $publisher->title }}
-			
+		</h4>
+		
+		<h4 id="genre">
+			Genre:
+			@foreach($game->genre as $g)
+				{{ $g->title }}
+			@endforeach
 		</h4>
 		
 		<div id="description">

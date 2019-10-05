@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
 		<div class="col-3">
-			<img class="rounded mx-auto d-block" src="{{url('/images/CuriousFace.png')}}" alt="Curious pixel face" width="200px" height="200px">
+			<img src="{{ asset('storage/profile_images/'. $user->profile->image)}}"></img>
 		</div>
 		
 		<div class="col-9">
@@ -14,9 +14,9 @@
 					<h1>{{ $user->name }}</h1>
 				</div>
 				<div class="col-6">
-					@if (Auth::check())
+					@can('update', $user->profile)
 						<a href="/profile/{{$user->id}}/edit">Edit Profile</a>
-					@endif
+					@endcan
 				</div>
 			</div>
 			

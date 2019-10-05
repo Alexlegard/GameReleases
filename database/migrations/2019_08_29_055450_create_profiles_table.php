@@ -18,6 +18,7 @@ class CreateProfilesTable extends Migration
 			$table->unsignedBigInteger('user_id');//Foreign key
 			$table->text('description')->nullable();
 			$table->string('url')->nullable();
+			$table->string('image')->default('default.jpg');
             $table->timestamps();
 			
 			// We want to add an index to any foreign id in our

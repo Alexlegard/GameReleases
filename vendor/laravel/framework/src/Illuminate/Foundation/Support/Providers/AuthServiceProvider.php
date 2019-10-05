@@ -4,6 +4,8 @@ namespace Illuminate\Foundation\Support\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use App\Models;
+use App\Policies;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -12,7 +14,11 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $policies = [];
+    protected $policies = [
+	
+		Profile::class => ProfilePolicy::class,
+		'App\Models\Profile' => 'App\Policies\ProfilePolicy',
+	];
 
     /**
      * Register the application's policies.
@@ -24,6 +30,13 @@ class AuthServiceProvider extends ServiceProvider
         foreach ($this->policies as $key => $value) {
             Gate::policy($key, $value);
         }
+    }
+	
+	public function boot()
+    {
+        $this->registerPolicies();
+
+        //
     }
 
     /**

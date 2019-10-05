@@ -35,6 +35,17 @@
 		</div>
 		
 		<div id="form-group-row">
+			<div class="col-6">
+				<label for="image">Profile image:</label>
+			</div>
+			
+			<div class="col-6">
+				<input type="file" class="form-control-file" id="image" name="image">
+			</div>
+		</div>
+		
+		
+		<div id="form-group-row">
 			<input type="submit" value="Save Profile">
 		</div>
 	</div>
@@ -47,6 +58,10 @@
 
 	@if ($errors->has('url'))
 		<p>{{ $errors->first('url') }}</p>
+	@endif
+	
+	@if ($errors->has('image'))
+		<p>{{ $errors->first('image') }}</p>
 	@endif
 </div>
 

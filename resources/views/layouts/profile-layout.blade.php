@@ -20,8 +20,26 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	
 	<style>
+	#nav {
+		background-color:#990000;
+		border-bottom:5px solid black;
+		border-top:5px solid black;
+	}
+	
+	#logo {
+		font-size:24pt;
+	}
+	#right-nav {
+		font-size:18pt;
+	}
+	#right-nav a {
+		color:white;
+	}
+	
+	/********* Form *********/
 	h1 {
 		text-align:center;
+		margin-bottom:1.5em;
 	}
 	.content-form {
 		width:800px;
@@ -85,9 +103,9 @@
 <body>
     <div id="app">
         <!--<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">-->
-		<nav class="navbar navbar-expand-md navbar-light bg-danger shadow-sm text-light">
+		<nav class="navbar navbar-expand-md navbar-light shadow-sm text-light" id="nav">
             <div class="container">
-                <a class="navbar-brand text-light" href="{{ url('/') }}">
+                <a class="navbar-brand text-light" href="{{ url('/') }}" id="logo">
                     Game Releases
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -101,7 +119,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" id="right-nav">
                         <!-- Authentication Links -->
                         @guest <!-- If not logged in... -->
                             <li class="nav-item">

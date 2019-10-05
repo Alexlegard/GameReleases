@@ -89,6 +89,14 @@ return [
             'driver' => 'errorlog',
             'level' => 'debug',
         ],
+		
+		'stdout' => [
+			'driver' => 'monolog',
+			'handler' => StreamHandler::class,
+			'with' => [
+				'stream' => 'php://stdout',
+			],
+		],
     ],
 
 ];

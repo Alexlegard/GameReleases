@@ -19,6 +19,13 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<style>
+		#logo {
+			font-size:24pt;
+		}
+		#right-nav {
+			font-size:18pt;
+		}
+	
 		.card-header, .card-body {
 			/*background-color:#FFC0CB;*/
 		}
@@ -28,7 +35,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-danger shadow-sm">
             <div class="container">
-                <a class="navbar-brand text-white" href="{{ url('/') }}">
+                <a class="navbar-brand text-white" href="{{ url('/') }}" id="logo">
                     Game Releases
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -42,7 +49,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" id="right-nav">
                         <!-- Authentication Links -->
                         @guest <!-- If not logged in... -->
                             <li class="nav-item">

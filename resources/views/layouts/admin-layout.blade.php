@@ -158,6 +158,9 @@
 					<li>
 						<a class="nav-link" href="{{ url('admin/suggestions') }}">Suggestions</a>
 					</li>
+					<li>
+						<a class="nav-link" href="{{ url('admin/messages') }}">Messages</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url('') }}">Visit Website</a>
 					</li>

@@ -47,7 +47,7 @@ class CommentsController extends Controller
 		$time = Carbon\Carbon::now();
 		$comment->time_submitted = $time;
 		$comment->save();
-		return redirect("games/" . Auth()->user()->id);
+		return redirect("games/" . $game->id);
     }
 
     /**

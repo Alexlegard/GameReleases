@@ -29,10 +29,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('contact', function()
-{
-	return view('contact');
-});
+
 Route::get('advanced', function()
 {
 	return view('advanced');
@@ -51,7 +48,7 @@ Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.upda
 /******************** Games front-end ********************************************************************************/
 
 /* Post comment */
-Route::post('games/{game}/comment', 'CommentsController@store')->name('comments.store');
+Route::post('games/{game}/comment', 'CommentsController@store')->middleware('auth')->name('comments.store');
 /* Show game */
 Route::get('games/{game}', 'GamesController@show')->name('public.games.show');
 
@@ -61,6 +58,14 @@ Route::get('games/{game}', 'GamesController@show')->name('public.games.show');
 Route::get('suggestgame', 'GameSuggestionsController@create')->name('gamesuggestions.create');
 /* /gamesuggestion (store) */
 Route::post('suggestgame', 'GameSuggestionsController@store')->name('gamesuggestions.store');
+
+/******************** Messages ***************************************************************************************/
+
+/* /contact (create) */
+Route::get('contact', 'MessagesController@create')->name('messages.create');
+/* /contact (store) */
+Route::post('contact', 'MessagesController@store')->name('messages.store');
+
 /******************** Admin/index ************************************************************************************/
 
 Route::prefix('admin')->group(function() {
@@ -178,9 +183,17 @@ Route::prefix('admin')->group(function() {
 	Route::get('suggestions/{gameSuggestion}', 'GameSuggestionsController@show')->middleware('is_admin')->name('gameSuggestions.show');
 	/* /suggestions (list) */
 	Route::get('suggestions', 'GameSuggestionsController@index')->middleware('is_admin')->name('gameSuggestions.index');
-	/* /suggetions/{id} (destroy) */
+	/* /suggestions/{id} (destroy) */
 	Route::delete('suggestions/{gameSuggestion}', 'GameSuggestionsController@destroy')->middleware('is_admin')->name('gameSuggestions.destroy');
 	
+	/*********************** Admin/messages ******************************************************************************/
+	
+	/* /messages/{id} (show) */
+	Route::get('messages/{message}', 'MessagesController@show')->middleware('is_admin')->name('messages.show');
+	/* /messages (list) */
+	Route::get('messages', 'MessagesController@index')->middleware('is_admin')->name('messages.index');
+	/* /messages/{id} (destroy) */
+	Route::delete('messages/{message}', 'MessagesController@destroy')->middleware('is_admin')->name('messages.destroy');
 });
 
 

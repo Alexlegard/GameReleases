@@ -1,18 +1,14 @@
-
 @extends('layouts.master')
 
-@section('scripts')
-
-@endsection
-
 @section('content')
-<div class="container">
 
+<div class="container">
 	@if( !isset($genres[0]->game[0]) )
 		<p class="no-games-msg">Oops! We didn't find any games!</p>
 	@endif
 	
 	@foreach($genres as $genre)
+		@if(!empty($genre->game[0]))
 		<div class="row">
 			<h2 class="genre_header">{{ $genre->title }} Games:</h2>
 		</div>
@@ -49,5 +45,7 @@
 		
 			</div>
 		</div>
+		@endif
 	@endforeach
 </div>
+@endsection

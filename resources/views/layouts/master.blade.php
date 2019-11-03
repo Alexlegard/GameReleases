@@ -167,6 +167,8 @@
         </style>
 	</head>
 	<body> <!-- Header-top -->
+		
+		
 		@section('header')
 		<div id="header-top">
 			@if (Route::has('login'))
@@ -224,5 +226,6 @@
 		<div class="content">
 			@yield('content')
 		</div>
+		
 	</body>
 </html>

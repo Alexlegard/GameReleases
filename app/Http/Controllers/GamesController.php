@@ -103,14 +103,10 @@ class GamesController extends Controller
 		
 		$game->save();
 		
-		//Set developer of game with toggle
-		$gameid = Game::where('title', $game->title)->get();
-		$gameid = $gameid[0]->id;
 		
-
-		$game->developer()->sync($request->game, $request->developer);
-		$game->genres()->sync($request->game, $request->genre);
-		$game->console()->sync($request->game, $request->console);
+		$game->developer()->sync($request->developer);
+		$game->genres()->sync($request->genre);
+		$game->console()->sync($request->console);
 		
 		return redirect("/admin/games");
     }

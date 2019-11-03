@@ -8,6 +8,7 @@
 	<div class="col-sm-6">
 		<div class="top-card">
 			<div class="game_details">
+			
 				<p>
 					Developer:
 					@foreach($game->developer as $d)
@@ -21,10 +22,11 @@
 
 				<p id="genre">
 					Genre:
-					@foreach($game->genre as $g)
+					@foreach($game->genres as $g)
 						{{ $g->title }}
 					@endforeach
 				</p>
+				
 				<p id="releasedate">
 					Release date: {{ $game->release_date }}
 				</p>
@@ -49,7 +51,7 @@
 <h2>0 comments</h2>
 
 	@auth <!-- User is signed in. -->
-		<form class="comment-form" method="post" action="{{ url('games/' . auth()->user()->id . '/comment') }}" enctype="multipart/form-data">
+		<form class="comment-form" method="post" action="{{ url('games/' . $game->id . '/comment') }}" enctype="multipart/form-data">
 		@csrf
 		
 			<div>

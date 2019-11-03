@@ -45,8 +45,6 @@ class GameSuggestionsController extends Controller
      */
     public function store(Request $request)
     {
-		
-		
         request()->validate([
 			'title' => 'required',
 			'developer' => 'required',

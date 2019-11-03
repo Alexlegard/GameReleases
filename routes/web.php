@@ -47,6 +47,7 @@ Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edi
 /* Update profile */
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
 
+
 /******************** Games front-end ********************************************************************************/
 
 /* Post comment */

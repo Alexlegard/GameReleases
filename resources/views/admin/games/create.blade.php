@@ -2,7 +2,9 @@
 
 @section('content')
 
+
 @if( isset($developers[0]) && isset($publishers[0]) && isset($consoles[0]) )
+
 <form class="content-form" method="post" action="/admin/games" enctype="multipart/form-data">
 	@csrf
 	
@@ -62,6 +64,7 @@
 		
 		<div id="form-group-row">
 			<div class="col-6">
+
 				<label for="developer">Consoles:</label>
 			</div>
 			
@@ -113,6 +116,7 @@
 		</div>
 	</div>
 </form>
+
 
 <div class="errors">
 	@if($errors->has('title'))

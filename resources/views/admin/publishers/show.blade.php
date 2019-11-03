@@ -1,5 +1,6 @@
 @extends('layouts.admin-layout')
 
+
 @section('scripts')
 <script>
 	function ConfirmDelete(){
@@ -25,6 +26,7 @@
 		<form class="delete-form" method="post" action="{{ url('admin/publishers/' . $publisher->id) }}">
 		@csrf
 		@method('DELETE')
+
 
 			<input type="submit" value="Delete this publisher" onclick="return ConfirmDelete();">
 		</form>

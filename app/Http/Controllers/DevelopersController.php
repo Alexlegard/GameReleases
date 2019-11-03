@@ -121,6 +121,7 @@ class DevelopersController extends Controller
 		}
 		
 		$developer->save();
+
 		return redirect("/admin/developers/" . $developer->id);
     }
 

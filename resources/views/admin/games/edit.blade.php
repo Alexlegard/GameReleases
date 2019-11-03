@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <form class="content-form" method="post" action="{{ url('/admin/games/'. $game->id) }}" enctype="multipart/form-data">
 	@csrf
 	@method('PATCH')
@@ -40,6 +41,7 @@
 			<div class="col-6">
 				<select name="developer[]" multiple="multiple">
 					@foreach($developers as $developer)
+
 						<option value="{{ $developer->id }}">{{ $developer->title }}</option>
 					@endforeach
 				</select>

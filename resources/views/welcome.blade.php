@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 
 @section('scripts')
@@ -50,5 +51,3 @@
 		</div>
 	@endforeach
 </div>
-	
-@endsection

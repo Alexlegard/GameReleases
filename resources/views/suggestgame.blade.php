@@ -2,8 +2,10 @@
 
 @section('content')
 
+
 <form class="content-form" method="post" action="suggestgame">
 @csrf
+
 	<div id="card-top">
 		<h1>Suggest a Game</h1>
 	</div>

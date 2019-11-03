@@ -1,5 +1,6 @@
 @extends('layouts.admin-layout')
 
+
 @section('scripts')
 <script>
 	function ConfirmDelete(){
@@ -14,14 +15,15 @@
 <h1>{{ $game->title }}</h1>
 
 <div class="row">
+
 	<div class="col-6">
-	
 		<h4 id="releasedate">
 			Release date: {{ $game->release_date }}
 		</h4>
 		
 		<h4 id="publisher">
 			Publisher: {{ $publisher->title }}
+
 		</h4>
 
 		<div class="top-card">
@@ -59,7 +61,6 @@
 		</div>
 	
 		<div class="description">
-
 			{{ $game->description }}
 		</div>
 		<div>
@@ -72,6 +73,7 @@
 		<form class="delete-form" method="post" action="{{ url('admin/games/'. $game->id) }}">
 		@csrf
 		@method('DELETE')
+
 
 			<input type="submit" value="Delete this game" onclick="return ConfirmDelete();">
 		</form>

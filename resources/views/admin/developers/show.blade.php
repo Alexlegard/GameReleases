@@ -1,5 +1,6 @@
 @extends('layouts.admin-layout')
 
+
 @section('scripts')
 <script>
 	function ConfirmDelete(){
@@ -15,6 +16,7 @@
 
 <div class="row">
 	<div class="col-sm-6">
+
 		<div>
 			<a href="{{ url('admin/developers') }}" style="color:#00008b;font-size:15pt;">Back to List</a>
 		</div>
@@ -25,6 +27,7 @@
 		<form class="delete-form" method="post" action="{{ url('admin/developers/' . $developer->id) }}">
 		@csrf
 		@method('DELETE')
+
 
 			<input type="submit" value="Delete this developer" onclick="return ConfirmDelete();">
 		</form>

@@ -19,6 +19,7 @@ class AdminController extends Controller
 {
 	public function admin(User $user)
     {
+
 		$nogames = Game::count();
 		$nodevelopers = Developer::count();
 		$nopublishers = Publisher::count();

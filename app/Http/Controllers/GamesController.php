@@ -102,12 +102,12 @@ class GamesController extends Controller
 		}
 		
 		$game->save();
-
 		
 		//Set developer of game with toggle
 		$gameid = Game::where('title', $game->title)->get();
 		$gameid = $gameid[0]->id;
 		
+
 		$game->developer()->sync($request->game, $request->developer);
 		$game->genres()->sync($request->game, $request->genre);
 		$game->console()->sync($request->game, $request->console);
@@ -126,6 +126,7 @@ class GamesController extends Controller
 		$publisher = Publisher::where('id', $game->publisher_id)->get();
 		$publisher = $publisher[0];
 		
+
 		if ( Route::currentRouteName() == 'admin.games.show' ) {
 			
 			return view("admin/games/show", [
@@ -174,6 +175,7 @@ class GamesController extends Controller
      */
     public function update(Request $request, Game $game)
     {
+
 		request()->validate([
 			'title' => 'required',
 			'description' => 'required',

@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <form class="content-form" method="post" action="{{ url('/admin/developers/' . $developer->id ) }}" enctype="multipart/form-data">
 	@csrf
 	@method('PATCH')

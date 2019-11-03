@@ -21,6 +21,7 @@
 		<!-- Styles -->
 		<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 		
+
 		@yield('scripts')
 		
 		<style>
@@ -28,10 +29,12 @@
 				margin:0;
 				font-family: 'Nunito', sans-serif;
 			}
+
 			.content {
 				padding-left:8px;
 				padding-right:8px;
 			}
+
 			/************** Header-top styles **************/
             #header-top { /* The outer element */
 				background-color:#660000;
@@ -89,9 +92,11 @@
 				padding-bottom:1em;
 				background-color:#f2f2f2;
 			}
+
 			.genre_header {
 				margin-top:1em;
 			}
+
 			#card-top {
 				border-bottom: 1px solid #696969;
 				background-color:#DCDCDC;
@@ -108,6 +113,7 @@
 				margin-top:5px;
 				margin-bottom:5px;
 			}
+
 			.no-games-msg {
 				font-size:16pt;
 				margin-top:1em;
@@ -166,6 +172,7 @@
 			@if (Route::has('login'))
 				<div id="top-nav">
 					@auth <!-- If user is signed in -->
+
 						<a href="{{ url('profile/' . Auth::User()->id) }}">Profile</a>
 					@else <!-- If user is not signed in -->
 						<a href="{{ url('login') }}">Login</a>
@@ -177,6 +184,7 @@
 					
 					<a href="{{ url('suggestgame') }}">Suggest a Game</a>
 					<a href="{{ url('contact') }}">Contact Me</a>
+
 				</div>
 				<div class="clear"></div>
 			@endif
@@ -186,7 +194,9 @@
 		<div id="header-bottom">
 			<div id="logo">
 				<a href="/">
+
 					<img class="rounded mx-auto d-block" src="{{ asset('images/GameReleasesLogo.jpg') }}"
+
 					alt="Curious pixel face" width="280px" height="140px">
 				</a>
 			</div>

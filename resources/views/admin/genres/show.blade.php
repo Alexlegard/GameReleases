@@ -1,5 +1,6 @@
 @extends('layouts.admin-layout')
 
+
 @section('scripts')
 <script>
 	function ConfirmDelete(){

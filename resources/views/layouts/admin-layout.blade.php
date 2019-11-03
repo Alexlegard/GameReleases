@@ -98,6 +98,7 @@
 		text-align:center;
 		margin-top:20px;
 	}
+
 	/************ Game details **************/
 	.top-card {
 		background-color:#C0C0C0;
@@ -132,6 +133,7 @@
 						<a class="nav-link" href="{{ url('admin') }}">Dashboard</a>
 					</li>
 					<li class="nav-item">
+
 						<a class="nav-link" href="{{ url('admin/games') }}">Games</a>
 					</li>
 					<li class="nav-item">
@@ -143,6 +145,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url('admin/genres') }}">Genres</a>
 					</li>
+
 					<li>
 						<a class="nav-link" href="{{ url('admin/consoles') }}">Consoles</a>
 					</li>

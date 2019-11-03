@@ -4,6 +4,7 @@
 
 <!-- To add a new genre: We only need to set the title. -->
 
+
 <form class="content-form" method="post" action="/admin/genres" enctype="multipart/form-data">
 	@csrf
 	

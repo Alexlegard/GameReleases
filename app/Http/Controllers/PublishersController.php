@@ -78,6 +78,7 @@ class PublishersController extends Controller
      */
     public function show(Publisher $publisher)
     {
+
 		//Pass all games that were published by the publisher
 		//$games = Game::where('publisher', $publisher->title);
 		$games = Game::where('publisher_id', $publisher->id)->get();

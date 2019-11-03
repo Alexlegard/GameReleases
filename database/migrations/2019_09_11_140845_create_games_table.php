@@ -36,6 +36,7 @@ class CreateGamesTable extends Migration
 			$table->index('publisher_id');
 			
 			//Many to many relationships with: Developer, genre, console
+
         });
     }
 
